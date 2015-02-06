@@ -9,6 +9,10 @@ module Shutterstock
       def search(searchterm, options = {})
         call([BASE_PATH, 'search'], :get, {searchterm: searchterm}.merge(options))
       end
+
+      def details(imageid, options = {})
+      	call([BASE_PATH, imageid], :get, options)
+      end
     end
   end
 end
